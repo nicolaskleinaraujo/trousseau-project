@@ -7,7 +7,7 @@
     font-family: 'Roboto', sans-serif;
 }
 
-.navbar_list {
+.header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -15,24 +15,24 @@
     background-color: #2D3045;
 }
 
-.navbar_list > img {
+.header > img {
     margin-left: 50px;
 }
 
-.navbar_list > ul {
+.header ul {
     list-style-type: none;
     display: flex;
     margin-right: 50px;
     font-size: 1.3em;
 }
 
-.navbar_list > ul a {
+.header ul a {
     margin-right: 35px;
-    color: white;
+    color: #BACCD8;
     text-decoration: none;
 }
 
-.navbar_list > ul a:hover {
+.header ul a:hover {
     text-decoration: underline;
 }
 

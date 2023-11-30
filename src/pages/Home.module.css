@@ -15,9 +15,30 @@
 .home > h1 {
     text-align: center;
     padding: 20px;
+    color: #7E82B2;
 }
 
 .grid_areas {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.grid_areas > div {
+    text-align: center;
+    padding: 20px;
+    font-size: 1.5em;
+}
+
+.grid_areas h2 {
+    margin-bottom: 8px;
+}
+
+.grid_areas ul {
+    list-style-type: none;
+}
+
+.grid_areas ul > li {
+    cursor: pointer;
+    margin-bottom: 10px;
 }

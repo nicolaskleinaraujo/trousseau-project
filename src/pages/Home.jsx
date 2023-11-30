@@ -4,8 +4,8 @@ function Home() {
     return (
         <div className={styles.home}>
             <h1>Projeto de Enxoval</h1>
-            <div className="grid_areas">
-                <div id="item1">
+            <div className={styles.grid_areas}>
+                <div>
                     <h2>Cozinha</h2>
                     <ul>
                         <li>Opção 1</li>
