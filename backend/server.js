@@ -7,9 +7,9 @@ app.use(express.json)
 const dbConnection = require('./db/conn')
 dbConnection()
 
-//Routes (Item Route)
-const itemsRoute = require('./routes/items')
-app.use('api', itemsRoute)
+// Routes configuration
+const routes = require('./routes/router')
+app.use('/api', routes)
 
 // Starting the server
 app.listen(3000, () => {
