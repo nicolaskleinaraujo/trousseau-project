@@ -3,9 +3,9 @@ const express = require('express')
 const app = express()
 app.use(express.json)
 
-// Importing the database connection function
-const databaseConnection = require('./db/conn')
-databaseConnection()
+// Importing and conecting to the database
+const dbConnection = require('./db/conn')
+dbConnection()
 
 // Starting the server
 app.listen(3000, () => {
