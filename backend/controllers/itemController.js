@@ -1,5 +1,5 @@
 // Importing the model
-const { Item: ItemModel } = require('../models/Item')
+const ItemModel = require('../models/Item')
 
 const itemController = {
 
@@ -7,18 +7,15 @@ const itemController = {
         try {
             const item = {
                 name: req.body.name,
-                place: req.body.place
+                place: req.body.place,
             }
             
-            const response = await ItemModel.create(service)
-
-            res.status(201).json({ response, msg:'Item created sucessfully!' })
-
+            const response = await ItemModel.create(item)
+            res.status(201).json({ response, msg: "Item created sucessfully!" })
         } catch (error) {
             console.log(error)
         }
-    }
-
+    },
 }
 
 // Exporting the 

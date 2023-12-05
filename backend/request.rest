@@ -2,6 +2,6 @@ POST http://localhost:3000/api/items
 Content-Type: application/json
 
 {
-    "name": "Geladeira",
+    "name": "Pia",
     "place": "Cozinha"
 }

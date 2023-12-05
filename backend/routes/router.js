@@ -1,9 +1,9 @@
 // Importing the Router
 const router = require('express').Router()
 
-// Item Router
-const itemRouter = require('./items')
-router.use('/', itemRouter)
+// Items Router
+const itemsRouter = require('./items')
+router.use('/', itemsRouter)
 
 // Exporting Item Router
 module.exports = router
