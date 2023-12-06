@@ -7,7 +7,7 @@ const itemController = {
         try {
             const item = {
                 name: req.body.name,
-                place: req.body.place,
+                place: req.body.place
             }
             
             const response = await ItemModel.create(item)
