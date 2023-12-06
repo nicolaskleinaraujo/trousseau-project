@@ -2,7 +2,6 @@
 const ItemModel = require('../models/Item')
 
 const itemController = {
-
     create: async(req, res) => {
         try {
             const item = {
@@ -16,6 +15,15 @@ const itemController = {
             console.log(error)
         }
     },
+
+    getAll: async (req, res) => {
+        try {
+            const items = await ItemModel.find()
+            res.json(items)
+        } catch (error) {
+            console.log(error)
+        }
+    }
 }
 
 // Exporting the 
