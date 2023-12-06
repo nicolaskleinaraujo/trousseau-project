@@ -1,11 +1,15 @@
+// Importing the react-router-dom functions
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 
+// Importing the pages
 import Home from "./pages/Home"
 import Add from "./pages/Add"
 
+// Importing the components
 import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
 
+// App render function
 function App() {
     return (
         <BrowserRouter>
@@ -19,4 +23,5 @@ function App() {
     )
 }
 
+// Exporting the app function
 export default App
