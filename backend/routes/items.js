@@ -10,5 +10,8 @@ router.route("/items").post((req, res) => itemController.create(req, res))
 // Get all itens Funcion
 router.route("/items").get((req, res) => itemController.getAll(req, res))
 
+// Remove item by id
+router.route("/items").delete((req, res) => itemController.delete(req, res)) 
+
 // Exporting the router
 module.exports = router
