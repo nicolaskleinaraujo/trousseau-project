@@ -19,7 +19,24 @@ const itemController = {
     getAll: async (req, res) => {
         try {
             const items = await ItemModel.find()
-            res.json(items)
+            res.status(200).json(items)
+        } catch (error) {
+            console.log(error)
+        }
+    },
+
+    delete: async (req, res) => {
+        try {
+            const id = req.params.id
+
+            const item = await ItemModel.findById()
+            if (!item) {
+                res.status(404).json({msg: "Item not finded"})
+                return
+            }
+
+            const deleteItem = await ItemModel.findByIdAndDelete(id)
+            res.status(200).json({deleteItem, msg: "Item removed sucessfully"})
         } catch (error) {
             console.log(error)
         }
