@@ -44,8 +44,8 @@ function Home() {
                             ?
                             <li>
                                 {item.name}
-                                <button className={styles.opt_button} onClick={() => checkItem()}><FaCheck /></button>
-                                <button className={styles.opt_button} onClick={() => deleteItem(item._id)}><FaTrash /></button>
+                                <button onClick={() => checkItem()}><FaCheck /></button>
+                                <button onClick={() => deleteItem(item._id)}><FaTrash /></button>
                             </li>
                             :
                             null
