@@ -39,7 +39,12 @@ function Home() {
                 <div>
                     <h2>Cozinha</h2>
                     <ul>
-                        {items.map((item) => (
+                        {
+                        items.length == 0
+                        ?
+                        <li>CARREGANDO...</li>
+                        :
+                        items.map((item) => (
                             item.place == "Cozinha"
                             ?
                             <li>
@@ -55,7 +60,12 @@ function Home() {
                 <div>
                     <h2>Sala de Estar</h2>
                     <ul>
-                        {items.map((item) => (
+                        {
+                        items.length == 0
+                        ?
+                        <li>CARREGANDO...</li>
+                        :
+                        items.map((item) => (
                             item.place == "Sala de Estar"
                             ? 
                             <li>
@@ -71,7 +81,12 @@ function Home() {
                 <div>
                     <h2>Quarto</h2>
                     <ul>
-                        {items.map((item) => (
+                        {
+                        items.length == 0
+                        ?
+                        <li>CARREGANDO...</li>
+                        :
+                        items.map((item) => (
                             item.place == "Quarto"
                             ?
                             <li>
@@ -87,7 +102,12 @@ function Home() {
                 <div>
                     <h2>Eletronicos</h2>
                     <ul>
-                        {items.map((item) => (
+                        {
+                        items.length == 0
+                        ?
+                        <li>CARREGANDO...</li>
+                        :
+                        items.map((item) => (
                             item.place == "Eletronicos"
                             ?
                             <li>
