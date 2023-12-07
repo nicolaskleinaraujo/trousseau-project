@@ -30,7 +30,8 @@
     margin-bottom: 20px;
 }
 
-.add div > input {
+.add div > input,
+.add div > select {
     margin-top: 3px;
     padding: 5px;
     border-radius: 5px;
