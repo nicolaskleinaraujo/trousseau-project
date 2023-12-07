@@ -1,5 +1,7 @@
+// Importing the CSS
 import styles from "./Add.module.css"
 
+// Importing the functions
 import dbFetch from "../axios/config"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
@@ -7,9 +9,11 @@ import { useNavigate } from "react-router-dom"
 function Add() {
     const navigate = useNavigate()
 
+    // Info storing for item creation
     const [name, setName] = useState()
     const [place, setPlace] = useState()
 
+    // This function creates an item via the API
     const createItem = async (e) => {
         e.preventDefault()
 
@@ -39,7 +43,7 @@ function Add() {
                 <div>
                     <label htmlFor="place">Local: </label>
                     <select required name="place" id="place" onChange={ (e) => setPlace(e.target.value) }>
-                        <option>Escolha o local</option>
+                        <option disabled selected>Escolha o local</option>
                         <option value="Cozinha">Cozinha</option>
                         <option value="Sala de Estar">Sala de Estar</option>
                         <option value="Quarto">Quarto</option>
