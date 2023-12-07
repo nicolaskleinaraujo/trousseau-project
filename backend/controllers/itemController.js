@@ -1,6 +1,7 @@
 // Importing the model
 const ItemModel = require('../models/Item')
 
+// Creating the "CRUD" functions
 const itemController = {
     create: async(req, res) => {
         try {
@@ -29,19 +30,20 @@ const itemController = {
         try {
             const id = req.params.id
 
-            const item = await ItemModel.findById()
+            const item = await ItemModel.findById(id)
+
             if (!item) {
-                res.status(404).json({msg: "Item not finded"})
+                res.status(404).json({ msg: "Item not finded!" })
                 return
             }
 
             const deleteItem = await ItemModel.findByIdAndDelete(id)
-            res.status(200).json({deleteItem, msg: "Item removed sucessfully"})
+            res.status(200).json({ deleteItem, msg: "Item removed sucessfully!" })
         } catch (error) {
             console.log(error)
         }
     }
 }
 
-// Exporting the 
+// Exporting all functions
 module.exports = itemController

@@ -8,3 +8,6 @@ Content-Type: application/json
 
 ###
 GET http://localhost:3000/api/items
+
+###
+DELETE http://localhost:3000/api/items/6571d8f2e7ee74ba247a6185
