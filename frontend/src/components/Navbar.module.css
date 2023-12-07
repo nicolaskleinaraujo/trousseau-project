@@ -15,8 +15,9 @@
     background-color: #2D3045;
 }
 
-.header > img {
+.header img {
     margin-left: 50px;
+    width: 150px;
 }
 
 .header ul {

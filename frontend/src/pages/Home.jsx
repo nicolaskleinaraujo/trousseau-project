@@ -34,7 +34,7 @@ function Home() {
 
     return (
         <div className={styles.home}>
-            <h1>Projeto de Enxoval</h1>
+            <h1>Enxoval</h1>
             <div className={styles.grid_areas}>
                 <div>
                     <h2>Cozinha</h2>

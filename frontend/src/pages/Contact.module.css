@@ -7,22 +7,34 @@
     font-family: 'Roboto', sans-serif;
 }
 
-.footer {
-    padding: 13px;
-    background-color: #2D3045;
+.contact {
+    background-color: #1E2130;
     color: white;
-}
-
-.footer > p {
     text-align: center;
-    padding: 3px;
 }
 
-.footer > p > a {
+.contact > h1 {
+    padding: 20px;
+    color: #7E82B2;
+}
+
+.contact > ul {
+    padding-bottom: 20px;
+}
+
+.contact li {
+    padding: 3px;
+    color: #BACCD8;
+    cursor: pointer;
+}
+
+.contact li:hover,
+.contact p > a:hover {
+    text-decoration: underline;
+}
+
+.contact a {
     text-decoration: none;
     color: #BACCD8;
 }
 
-.footer > p > a:hover {
-    text-decoration: underline;
-}
