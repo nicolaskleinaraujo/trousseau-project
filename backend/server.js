@@ -15,5 +15,5 @@ app.use("/api", routes)
 
 // Starting the server
 app.listen(3000, () => {
-    console.log('Server started on the port 3000')
+    console.log('Server started')
 })
