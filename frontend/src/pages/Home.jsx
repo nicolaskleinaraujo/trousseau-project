@@ -28,7 +28,7 @@ function Home() {
 
     // This function deletes an item and reloads the page
     async function deleteItem(id) {
-        await dbFetch.delete(`http://localhost:3000/api/items/${id}`)
+        await dbFetch.delete(`https://tousseau-project.onrender.com/api/items/${id}`)
         location.reload()
     }
 
