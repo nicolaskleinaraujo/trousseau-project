@@ -1,11 +1,17 @@
+// Importing CSS
 import styles from "./Home.module.css"
 
+// Importing icons
+import { FaTrash, FaCheck } from "react-icons/fa"
+
+// Importing the functions
 import { useEffect, useState } from "react"
 import dbFetch from "../axios/config"
 
 function Home() {
     const [items, setItems] = useState([])
 
+    // This function gets all items from the api and stores into the items variable
     const getItems = async() => {
         try {
             const response = await dbFetch.get("/items")
@@ -15,9 +21,16 @@ function Home() {
         }
     }
 
+    // Executing the above function
     useEffect(() => {
         getItems()
     }, [])
+
+    // This function deletes an item and reloads the page
+    async function deleteItem(id) {
+        await dbFetch.delete(`http://localhost:3000/api/items/${id}`)
+        location.reload()
+    }
 
     return (
         <div className={styles.home}>
@@ -28,8 +41,14 @@ function Home() {
                     <ul>
                         {items.map((item) => (
                             item.place == "Cozinha"
-                            ? <li>{item.name}</li>
-                            : null
+                            ?
+                            <li>
+                                {item.name}
+                                <button className={styles.opt_button} onClick={() => checkItem()}><FaCheck /></button>
+                                <button className={styles.opt_button} onClick={() => deleteItem(item._id)}><FaTrash /></button>
+                            </li>
+                            :
+                            null
                         ))}
                     </ul>
                 </div>
@@ -38,8 +57,14 @@ function Home() {
                     <ul>
                         {items.map((item) => (
                             item.place == "Sala de Estar"
-                            ? <li>{item.name}</li>
-                            : null
+                            ? 
+                            <li>
+                                {item.name}
+                                <button onClick={() => checkItem()}><FaCheck /></button>
+                                <button onClick={() => deleteItem(item._id)}><FaTrash /></button>
+                            </li>
+                            :
+                            null
                         ))}
                     </ul>
                 </div>
@@ -48,8 +73,14 @@ function Home() {
                     <ul>
                         {items.map((item) => (
                             item.place == "Quarto"
-                            ? <li>{item.name}</li>
-                            : null
+                            ?
+                            <li>
+                                {item.name}
+                                <button onClick={() => checkItem()}><FaCheck /></button>
+                                <button onClick={() => deleteItem(item._id)}><FaTrash /></button>
+                            </li>
+                            :
+                            null
                         ))}
                     </ul>
                 </div>
@@ -58,8 +89,14 @@ function Home() {
                     <ul>
                         {items.map((item) => (
                             item.place == "Eletronicos"
-                            ? <li>{item.name}</li>
-                            : null
+                            ?
+                            <li>
+                                {item.name}
+                                <button onClick={() => checkItem()}><FaCheck /></button>
+                                <button onClick={() => deleteItem(item._id)}><FaTrash /></button>
+                            </li>
+                            :
+                            null
                         ))}
                     </ul>
                 </div>
