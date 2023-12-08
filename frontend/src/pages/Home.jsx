@@ -28,7 +28,7 @@ function Home() {
 
     // This function deletes an item and reloads the page
     async function deleteItem(id) {
-        await dbFetch.delete(`https://tousseau-project.onrender.com/api/items/${id}`)
+        await dbFetch.delete(`/items/${id}`)
         location.reload()
     }
 
@@ -42,7 +42,10 @@ function Home() {
                         {
                         items.length == 0
                         ?
-                        <li>CARREGANDO...</li>
+                        <li>
+                            Carregando... <br />
+                            Isso pode demorar um pouco
+                        </li>
                         :
                         items.map((item) => (
                             item.place == "Cozinha"
@@ -63,7 +66,10 @@ function Home() {
                         {
                         items.length == 0
                         ?
-                        <li>CARREGANDO...</li>
+                        <li>
+                            Carregando... <br />
+                            Isso pode demorar um pouco
+                        </li>
                         :
                         items.map((item) => (
                             item.place == "Sala de Estar"
@@ -84,7 +90,10 @@ function Home() {
                         {
                         items.length == 0
                         ?
-                        <li>CARREGANDO...</li>
+                        <li>
+                            Carregando... <br />
+                            Isso pode demorar um pouco
+                        </li>
                         :
                         items.map((item) => (
                             item.place == "Quarto"
@@ -105,7 +114,10 @@ function Home() {
                         {
                         items.length == 0
                         ?
-                        <li>CARREGANDO...</li>
+                        <li>
+                            Carregando... <br />
+                            Isso pode demorar um pouco
+                        </li>
                         :
                         items.map((item) => (
                             item.place == "Eletronicos"
