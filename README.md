@@ -1,5 +1,5 @@
 # Trousseau made with React and Node.js
- ![MIT License](https://img.shields.io/badge/license-MIT-blue)<br>
+ ![MIT License](https://img.shields.io/badge/license-MIT-blue) [![Netlify Status](https://api.netlify.com/api/v1/badges/61e3f784-e2d8-4c45-bf45-7cf521bdbf2e/deploy-status)](https://app.netlify.com/sites/trousseau-project/deploys)<br>
  <img src="./frontend/src/assets/home-page.png" alt="Print Home Page" width="700">.
  ### Demo App: https://trousseau-project.netlify.app
 # About
