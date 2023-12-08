@@ -30,7 +30,7 @@ function Add() {
             <h1>Adicionar Item</h1>
             <form onSubmit={(e) => createItem(e)}>
                 <div>
-                    <label htmlFor="name">Nome: </label>
+                    <label htmlFor="name">Nome do Item: </label>
                     <input 
                     type="text" 
                     name="name" 
@@ -43,7 +43,7 @@ function Add() {
                 <div>
                     <label htmlFor="place">Local: </label>
                     <select required name="place" id="place" onChange={ (e) => setPlace(e.target.value) }>
-                        <option disabled selected>Escolha o local</option>
+                        <option className={styles.dis_btn} disabled selected>--ESCOLHA O LOCAL--</option>
                         <option value="Cozinha">Cozinha</option>
                         <option value="Sala de Estar">Sala de Estar</option>
                         <option value="Quarto">Quarto</option>

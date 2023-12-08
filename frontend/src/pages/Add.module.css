@@ -33,9 +33,14 @@
 .add div > input,
 .add div > select {
     margin-top: 3px;
+    text-indent: 3px;
     padding: 5px;
     border-radius: 5px;
     border: none;
+}
+
+.dis_btn {
+    text-align: center;
 }
 
 .submit_button {
