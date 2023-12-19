@@ -32,6 +32,14 @@ function Home() {
         location.reload()
     }
 
+    // This function checks an item and reloads the page
+    async function checkItem(id) {
+        await dbFetch.patch(`/items/${id}`, {
+            check: true
+        })
+        location.reload()
+    }
+
     return (
         <div className={styles.home}>
             <h1>Enxoval</h1>

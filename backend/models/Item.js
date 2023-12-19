@@ -13,6 +13,9 @@ const itemSchema = new Schema({
     place: {
         type: String,
         required: true,
+    },
+    check: {
+        default: false,
     }
 })
 
