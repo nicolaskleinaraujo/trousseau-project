@@ -15,7 +15,8 @@ const itemSchema = new Schema({
         required: true,
     },
     check: {
-        default: false,
+        type: String,
+        required: true,
     }
 })
 

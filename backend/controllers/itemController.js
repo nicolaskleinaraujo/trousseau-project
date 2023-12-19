@@ -7,7 +7,8 @@ const itemController = {
         try {
             const item = {
                 name: req.body.name,
-                place: req.body.place
+                place: req.body.place,
+                check: "false"
             }
             
             const response = await ItemModel.create(item)
@@ -39,6 +40,28 @@ const itemController = {
 
             const deleteItem = await ItemModel.findByIdAndDelete(id)
             res.status(200).json({ deleteItem, msg: "Item removed sucessfully!" })
+        } catch (error) {
+            console.log(error)
+        }
+    },
+
+    update: async (req, res) => {
+        try {
+            const id = req.params.id
+
+            const item = {
+                name: req.body.name,
+                place: req.body.place,
+                check: req.body.check
+            }
+
+            const updatedItem = await ItemModel.findByIdAndUpdate(id, item)
+
+            if (!updatedItem) {
+                res.status(404).json({ msg: "Item not finded!" })
+            }
+
+            res.status(200).json({ item, msg: "Item updated sucessfully!" })
         } catch (error) {
             console.log(error)
         }

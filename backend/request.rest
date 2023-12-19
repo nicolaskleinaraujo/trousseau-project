@@ -2,12 +2,23 @@ POST http://localhost:3000/api/items
 Content-Type: application/json
 
 {
-    "name": "Pia",
-    "place": "Cozinha"
+    "name": "Colcha",
+    "place": "Quarto",
+    "check": "false"
 }
 
 ###
 GET http://localhost:3000/api/items
 
 ###
-DELETE http://localhost:3000/api/items/6571d8f2e7ee74ba247a6185
+DELETE http://localhost:3000/api/items/6581fd08cfa9b4a62fcf565f
+
+###
+PUT http://localhost:3000/api/items/6581ff0601af1c3021bb1d55
+Content-Type: application/json
+
+{
+    "name": "TESTE ATUALIZAÇÃO",
+    "place": "Cozinha",
+    "check": "true"
+}
