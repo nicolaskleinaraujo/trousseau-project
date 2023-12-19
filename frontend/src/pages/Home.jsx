@@ -34,8 +34,16 @@ function Home() {
 
     // This function checks an item and reloads the page
     async function checkItem(id) {
-        await dbFetch.patch(`/items/${id}`, {
-            check: true
+        await dbFetch.put(`/items/${id}`, {
+            check: "true"
+        })
+        location.reload()
+    }
+
+    // This function unchecks an item and reloads the page
+    async function uncheckItem(id) {
+        await dbFetch.put(`/items/${id}`, {
+            check: "false"
         })
         location.reload()
     }
@@ -58,9 +66,17 @@ function Home() {
                         items.map((item) => (
                             item.place == "Cozinha"
                             ?
+                            item.check == "true"
+                            ?
+                            <li className={styles.checked}>
+                                {item.name}
+                                <button onClick={() => uncheckItem(item._id)}><FaCheck /></button>
+                                <button onClick={() => deleteItem(item._id)}><FaTrash /></button>
+                            </li>
+                            :
                             <li>
                                 {item.name}
-                                <button onClick={() => checkItem()}><FaCheck /></button>
+                                <button onClick={() => checkItem(item._id)}><FaCheck /></button>
                                 <button onClick={() => deleteItem(item._id)}><FaTrash /></button>
                             </li>
                             :
@@ -81,10 +97,18 @@ function Home() {
                         :
                         items.map((item) => (
                             item.place == "Sala de Estar"
-                            ? 
+                            ?
+                            item.check == "true"
+                            ?
+                            <li className={styles.checked}>
+                                {item.name}
+                                <button onClick={() => uncheckItem(item._id)}><FaCheck /></button>
+                                <button onClick={() => deleteItem(item._id)}><FaTrash /></button>
+                            </li>
+                            :
                             <li>
                                 {item.name}
-                                <button onClick={() => checkItem()}><FaCheck /></button>
+                                <button onClick={() => checkItem(item._id)}><FaCheck /></button>
                                 <button onClick={() => deleteItem(item._id)}><FaTrash /></button>
                             </li>
                             :
@@ -106,9 +130,17 @@ function Home() {
                         items.map((item) => (
                             item.place == "Quarto"
                             ?
+                            item.check == "true"
+                            ?
+                            <li className={styles.checked}>
+                                {item.name}
+                                <button onClick={() => uncheckItem(item._id)}><FaCheck /></button>
+                                <button onClick={() => deleteItem(item._id)}><FaTrash /></button>
+                            </li>
+                            :
                             <li>
                                 {item.name}
-                                <button onClick={() => checkItem()}><FaCheck /></button>
+                                <button onClick={() => checkItem(item._id)}><FaCheck /></button>
                                 <button onClick={() => deleteItem(item._id)}><FaTrash /></button>
                             </li>
                             :
@@ -130,9 +162,17 @@ function Home() {
                         items.map((item) => (
                             item.place == "Eletronicos"
                             ?
+                            item.check == "true"
+                            ?
+                            <li className={styles.checked}>
+                                {item.name}
+                                <button onClick={() => uncheckItem(item._id)}><FaCheck /></button>
+                                <button onClick={() => deleteItem(item._id)}><FaTrash /></button>
+                            </li>
+                            :
                             <li>
                                 {item.name}
-                                <button onClick={() => checkItem()}><FaCheck /></button>
+                                <button onClick={() => checkItem(item._id)}><FaCheck /></button>
                                 <button onClick={() => deleteItem(item._id)}><FaTrash /></button>
                             </li>
                             :

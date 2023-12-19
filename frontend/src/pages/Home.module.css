@@ -43,6 +43,11 @@
     cursor: pointer;
 }
 
+.checked {
+    text-decoration: line-through;
+    opacity: 50%;
+}
+
 .grid_areas li button {
     margin-left: 10px;
     border: none;
