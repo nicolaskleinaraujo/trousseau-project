@@ -43,6 +43,10 @@
     cursor: pointer;
 }
 
+.buttons_hiden {
+    display: none;
+}
+
 .checked {
     text-decoration: line-through;
     opacity: 50%;

@@ -9,9 +9,8 @@ import { useEffect, useState } from "react"
 import dbFetch from "../axios/config"
 
 function Home() {
-    const [items, setItems] = useState([])
-
     // This function gets all items from the api and stores into the items variable
+    const [items, setItems] = useState([])
     const getItems = async() => {
         try {
             const response = await dbFetch.get("/items")
@@ -21,16 +20,10 @@ function Home() {
         }
     }
 
-    // Executing the above function
+    // Executing the above function ("getItems()")
     useEffect(() => {
         getItems()
     }, [])
-
-    // This function deletes an item and reloads the page
-    async function deleteItem(id) {
-        await dbFetch.delete(`/items/${id}`)
-        location.reload()
-    }
 
     // This function checks an item and reloads the page
     async function checkItem(id) {
@@ -48,13 +41,37 @@ function Home() {
         location.reload()
     }
 
+    // This function deletes an item and reloads the page
+    async function deleteItem(id) {
+        await dbFetch.delete(`/items/${id}`)
+        location.reload()
+    }
+
+    // This functions hides the items buttons and shows on mouse hover
+    const [kitchen, setKitchen] = useState("false")
+    const [livRoom, setLivRoom] = useState("false")
+    const [room, setRoom] = useState("false")
+    const [eletronics, setEletronics] = useState("false")
+    function showKitchen() {
+        setKitchen(!kitchen)
+    }
+    function showLivRoom() {
+        setLivRoom(!livRoom)
+    }
+    function showRoom() {
+        setRoom(!room)
+    }
+    function showEletronics() {
+        setEletronics(!eletronics)
+    }
+
     return (
         <div className={styles.home}>
             <h1>Enxoval</h1>
             <div className={styles.grid_areas}>
                 <div>
                     <h2>Cozinha</h2>
-                    <ul>
+                    <ul onMouseEnter={() => showKitchen()} onMouseLeave={() => showKitchen()}>
                         {
                         items.length == 0
                         ?
@@ -70,14 +87,14 @@ function Home() {
                             ?
                             <li className={styles.checked}>
                                 {item.name}
-                                <button onClick={() => uncheckItem(item._id)}><FaCheck /></button>
-                                <button onClick={() => deleteItem(item._id)}><FaTrash /></button>
+                                <button className={kitchen ? styles.buttons_hiden : null} onClick={() => uncheckItem(item._id)}><FaCheck /></button>
+                                <button className={kitchen ? styles.buttons_hiden : null} onClick={() => deleteItem(item._id)}><FaTrash /></button>
                             </li>
                             :
                             <li>
                                 {item.name}
-                                <button onClick={() => checkItem(item._id)}><FaCheck /></button>
-                                <button onClick={() => deleteItem(item._id)}><FaTrash /></button>
+                                <button className={kitchen ? styles.buttons_hiden : null} onClick={() => checkItem(item._id)}><FaCheck /></button>
+                                <button className={kitchen ? styles.buttons_hiden : null} onClick={() => deleteItem(item._id)}><FaTrash /></button>
                             </li>
                             :
                             null
@@ -86,7 +103,7 @@ function Home() {
                 </div>
                 <div>
                     <h2>Sala de Estar</h2>
-                    <ul>
+                    <ul onMouseEnter={() => showLivRoom()} onMouseLeave={() => showLivRoom()}>
                         {
                         items.length == 0
                         ?
@@ -102,14 +119,14 @@ function Home() {
                             ?
                             <li className={styles.checked}>
                                 {item.name}
-                                <button onClick={() => uncheckItem(item._id)}><FaCheck /></button>
-                                <button onClick={() => deleteItem(item._id)}><FaTrash /></button>
+                                <button className={livRoom ? styles.buttons_hiden : null} onClick={() => uncheckItem(item._id)}><FaCheck /></button>
+                                <button className={livRoom ? styles.buttons_hiden : null} onClick={() => deleteItem(item._id)}><FaTrash /></button>
                             </li>
                             :
                             <li>
                                 {item.name}
-                                <button onClick={() => checkItem(item._id)}><FaCheck /></button>
-                                <button onClick={() => deleteItem(item._id)}><FaTrash /></button>
+                                <button className={livRoom ? styles.buttons_hiden : null} onClick={() => checkItem(item._id)}><FaCheck /></button>
+                                <button className={livRoom ? styles.buttons_hiden : null} onClick={() => deleteItem(item._id)}><FaTrash /></button>
                             </li>
                             :
                             null
@@ -118,7 +135,7 @@ function Home() {
                 </div>
                 <div>
                     <h2>Quarto</h2>
-                    <ul>
+                    <ul onMouseEnter={() => showRoom()} onMouseLeave={() => showRoom()}>
                         {
                         items.length == 0
                         ?
@@ -134,14 +151,14 @@ function Home() {
                             ?
                             <li className={styles.checked}>
                                 {item.name}
-                                <button onClick={() => uncheckItem(item._id)}><FaCheck /></button>
-                                <button onClick={() => deleteItem(item._id)}><FaTrash /></button>
+                                <button className={room ? styles.buttons_hiden : null} onClick={() => uncheckItem(item._id)}><FaCheck /></button>
+                                <button className={room ? styles.buttons_hiden : null} onClick={() => deleteItem(item._id)}><FaTrash /></button>
                             </li>
                             :
                             <li>
                                 {item.name}
-                                <button onClick={() => checkItem(item._id)}><FaCheck /></button>
-                                <button onClick={() => deleteItem(item._id)}><FaTrash /></button>
+                                <button className={room ? styles.buttons_hiden : null} onClick={() => checkItem(item._id)}><FaCheck /></button>
+                                <button className={room ? styles.buttons_hiden : null} onClick={() => deleteItem(item._id)}><FaTrash /></button>
                             </li>
                             :
                             null
@@ -150,7 +167,7 @@ function Home() {
                 </div>
                 <div>
                     <h2>Eletronicos</h2>
-                    <ul>
+                    <ul onMouseEnter={() => showEletronics()} onMouseLeave={() => showEletronics()}>
                         {
                         items.length == 0
                         ?
@@ -166,14 +183,14 @@ function Home() {
                             ?
                             <li className={styles.checked}>
                                 {item.name}
-                                <button onClick={() => uncheckItem(item._id)}><FaCheck /></button>
-                                <button onClick={() => deleteItem(item._id)}><FaTrash /></button>
+                                <button className={eletronics ? styles.buttons_hiden : null} onClick={() => uncheckItem(item._id)}><FaCheck /></button>
+                                <button className={eletronics ? styles.buttons_hiden : null} onClick={() => deleteItem(item._id)}><FaTrash /></button>
                             </li>
                             :
                             <li>
                                 {item.name}
-                                <button onClick={() => checkItem(item._id)}><FaCheck /></button>
-                                <button onClick={() => deleteItem(item._id)}><FaTrash /></button>
+                                <button className={eletronics ? styles.buttons_hiden : null} onClick={() => checkItem(item._id)}><FaCheck /></button>
+                                <button className={eletronics ? styles.buttons_hiden : null} onClick={() => deleteItem(item._id)}><FaTrash /></button>
                             </li>
                             :
                             null
