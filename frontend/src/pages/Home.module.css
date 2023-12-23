@@ -49,7 +49,7 @@
 
 .checked {
     text-decoration: line-through;
-    opacity: 50%;
+    opacity: 80%;
 }
 
 .grid_areas li button {
