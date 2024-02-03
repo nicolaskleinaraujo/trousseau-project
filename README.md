@@ -22,7 +22,7 @@
  - React
  - JavaScript
  - Axios
- - HTML
+ - JSX
  - CSS
 
  ### Implantation
