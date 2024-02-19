@@ -30,13 +30,14 @@
     margin-bottom: 20px;
 }
 
-.add div > input,
-.add div > select {
+.add div > label > input,
+.add div > label > select {
     margin-top: 3px;
     text-indent: 3px;
     padding: 5px;
     border-radius: 5px;
     border: none;
+    width: 100%;
 }
 
 .dis_btn {
