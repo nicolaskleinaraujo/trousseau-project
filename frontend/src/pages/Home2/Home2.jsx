@@ -21,23 +21,22 @@ const Home2 = () => {
         }
     }
 
-    const checkItem = async(id) => {
-        var itemCheck = items.filter((item) => item._id === id)
-        if (itemCheck.check == "true") {
-            console.log("true")
-            /*itemCheck.check = "false"
+    const checkItem = (id) => {
+        items.filter(async(item) => {
+            if (item._id === id && item.check === "true") {
+                item.check = "false"
 
-            await dbFetch.put(`/items/${id}`, {
-                check: "false"
-            }) */
-        } else if (itemCheck.check == "false") {
-            console.log("false")
-            /*itemCheck.check = "true"
+                await dbFetch.put(`/items/${id}`, {
+                    check: "false"
+                })
+            } else if (item._id === id && item.check === "false") {
+                item.check = "true"
 
-            await dbFetch.put(`/items/${id}`, {
-                check: "true"
-            })*/
-        }
+                await dbFetch.put(`/items/${id}`, {
+                    check: "true"
+                })
+            }
+        })
     }
 
     useEffect(() => {
