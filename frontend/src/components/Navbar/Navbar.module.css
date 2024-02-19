@@ -20,24 +20,26 @@
     width: 150px;
 }
 
-.header ul {
+.header nav {
     list-style-type: none;
     display: flex;
     margin-right: 50px;
     font-size: 1.3em;
 }
 
-.header ul a {
+.header nav a {
     margin-right: 35px;
     color: #BACCD8;
     text-decoration: none;
+    padding: 10px;
+    border-radius: 20px;
+    transition: .3s;
 }
 
-.header ul a:hover {
-    text-decoration: underline;
+.header nav a:hover {
+    background-color: #1E2130;
 }
 
-
-
-
-
+.active {
+    background-color: #1E2130;
+}

@@ -1,16 +1,23 @@
 // CSS
 import styles from './Navbar.module.css'
 
+// Modules
+import { NavLink } from 'react-router-dom'
+
 function Navbar() {
     return (
         <header className={styles.header}>
-            <a href="/"><img src="./coin.svg" alt="Logo Projeto" /></a>
+            <NavLink to="/"><img src="./coin.svg" alt="Logo Projeto" /></NavLink>
             <nav>
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/add">Adicionar</a></li>
-                    <li><a href="/contact">Contato</a></li>
-                </ul>
+                <NavLink to="/" className={({ isActive }) => (isActive ? (styles.active) : "")}>
+                    Home
+                </NavLink>
+                <NavLink to="/add" className={({ isActive }) => (isActive ? (styles.active) : "")}>
+                    Adicionar
+                </NavLink>
+                <NavLink to="/contact" className={({ isActive }) => (isActive ? (styles.active) : "")}>
+                    Contato
+                </NavLink>
             </nav>
         </header>
     )
