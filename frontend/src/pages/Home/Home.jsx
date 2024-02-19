@@ -6,7 +6,7 @@ import { FaTrash, FaCheck } from "react-icons/fa"
 
 // Importing the functions
 import { useEffect, useState } from "react"
-import dbFetch from "../axios/config"
+import dbFetch from "../../axios/config"
 
 function Home() {
     // This function gets all items from the api and stores into the items variable

@@ -1,5 +1,5 @@
 import styles from './Navbar.module.css'
-import logo from '../assets/coin-img.svg'
+import logo from '../../assets/coin-img.svg'
 
 function Navbar() {
     return (

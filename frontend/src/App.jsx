@@ -2,13 +2,13 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 // Importing the pages
-import Home from "./pages/Home"
-import Add from "./pages/Add"
-import Contact from "./pages/Contact"
+import Home from "./pages/Home/Home"
+import Add from "./pages/Add/Add"
+import Contact from "./pages/Contact/Contact"
 
 // Importing the components
-import Navbar from "./components/Navbar"
-import Footer from "./components/Footer"
+import Navbar from "./components/Navbar/Navbar"
+import Footer from "./components/Footer/Footer"
 
 // App render function
 function App() {
