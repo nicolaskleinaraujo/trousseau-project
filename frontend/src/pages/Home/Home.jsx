@@ -1,16 +1,19 @@
-// Importing CSS
+// CSS
 import styles from "./Home.module.css"
 
-// Importing icons
+// Icons
 import { FaTrash, FaCheck } from "react-icons/fa"
 
-// Importing the functions
-import { useEffect, useState } from "react"
+// DB Fetch
 import dbFetch from "../../axios/config"
 
+// Modules
+import { useEffect, useState } from "react"
+
 function Home() {
-    // This function gets all items from the api and stores into the items variable
+    // Getting all the items from the API
     const [items, setItems] = useState([])
+
     const getItems = async() => {
         try {
             const response = await dbFetch.get("/items")
@@ -20,7 +23,6 @@ function Home() {
         }
     }
 
-    // Executing the above function ("getItems()")
     useEffect(() => {
         getItems()
     }, [])
