@@ -11,11 +11,13 @@ import dbFetch from "../../axios/config"
 import { useEffect, useState } from "react"
 
 const Home2 = () => {
+    const [loading, setLoading] = useState(true)
+
     const [items, setItems] = useState([])
     const getItems = async() => {
         try {
-            const response = await dbFetch.get("/items")
-            setItems(response.data)
+            const res = await dbFetch.get("/items")
+            setItems(res.data)
         } catch (error) {
             console.log(error)
         }
@@ -36,14 +38,14 @@ const Home2 = () => {
                     check: "true"
                 })
             }
+            setLoading(true)
         })
     }
 
     useEffect(() => {
         getItems()
-    }, [])
-
-    console.log(items)
+        setLoading(false)
+    }, [loading])
 
     return (
         <div>
