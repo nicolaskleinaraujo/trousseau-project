@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Home from "./pages/Home/Home"
 import Add from "./pages/Add/Add"
 import Contact from "./pages/Contact/Contact"
+import Home2 from "./pages/Home2/Home2"
 
 // Importing the components
 import Navbar from "./components/Navbar/Navbar"
@@ -19,6 +20,7 @@ function App() {
                 <Route exact path="/" element={<Home />} />
                 <Route exact path="/add" element={<Add />} />
                 <Route exact path="/contact" element={<Contact />} />
+                <Route exact path="/home" element={<Home2 />} />
             </Routes>
             <Footer/>
         </BrowserRouter>
