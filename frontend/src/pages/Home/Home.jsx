@@ -39,7 +39,6 @@ const Home2 = () => {
                 })
                 setLoading(true)
             }
-
         })
     }
 
