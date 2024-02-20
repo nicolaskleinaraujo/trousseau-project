@@ -53,7 +53,7 @@ const Home2 = () => {
     }, [loading])
 
     return (
-        <div>
+        <div className={styles.home}>
             <h1>Enxoval</h1>
             <div className={styles.grid_areas}>
                 <div>
