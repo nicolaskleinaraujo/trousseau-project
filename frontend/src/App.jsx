@@ -20,7 +20,6 @@ function App() {
                 <Route exact path="/" element={<Home />} />
                 <Route exact path="/add" element={<Add />} />
                 <Route exact path="/contact" element={<Contact />} />
-                <Route exact path="/home" element={<Home2 />} />
             </Routes>
             <Footer/>
         </BrowserRouter>
