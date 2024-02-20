@@ -1,4 +1,7 @@
+// CSS
 import styles from "./Contact.module.css"
+
+// Icons
 import { FaWhatsapp, FaInstagram, FaGithub } from "react-icons/fa"
 import { MdOutlineEmail } from "react-icons/md"
 
