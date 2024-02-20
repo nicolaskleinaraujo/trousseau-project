@@ -42,6 +42,11 @@ const Home2 = () => {
         })
     }
 
+    const deleteItem = async(id) => {
+        await dbFetch.delete(`/items/${id}`)
+        setLoading(true)
+    }
+
     useEffect(() => {
         getItems()
         setLoading(false)
@@ -54,16 +59,12 @@ const Home2 = () => {
                 <div>
                     {items &&
                         items.map((item) => (
-                            item.check === "true" ? (
-                                <div id={item._id} >
-                                    <li className={styles.checked}>{item.name} --- {item.place}</li>
-                                    <button onClick={() => checkItem(item._id)}>teste</button>
-                                </div>
-                            ) : (
-                                <div id={item._id} >
-                                    <li>{item.name} --- {item.place}</li>
-                                    <button onClick={() => checkItem(item._id)}>teste</button>
-                                </div>
+                            item.place === "Cozinha" && (
+                                <li key={item._id} className={item.check === "true" ? styles.checked : null}>
+                                    {item.name}
+                                    <button onClick={() => checkItem(item._id)}><FaCheck /></button>
+                                    <button onClick={() => deleteItem(item_id)}><FaTrash /></button>
+                                </li>
                             )
                         ))
                     }
