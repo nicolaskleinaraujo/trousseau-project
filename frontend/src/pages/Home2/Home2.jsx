@@ -64,7 +64,7 @@ const Home2 = () => {
                                 <li key={item._id} className={item.check === "true" ? styles.checked : null}>
                                     {item.name}
                                     <button onClick={() => checkItem(item._id)}><FaCheck /></button>
-                                    <button onClick={() => deleteItem(item_id)}><FaTrash /></button>
+                                    <button onClick={() => deleteItem(item._id)}><FaTrash /></button>
                                 </li>
                             )
                         ))
@@ -78,7 +78,7 @@ const Home2 = () => {
                                 <li key={item._id} className={item.check === "true" ? styles.checked : null}>
                                     {item.name}
                                     <button onClick={() => checkItem(item._id)}><FaCheck /></button>
-                                    <button onClick={() => deleteItem(item_id)}><FaTrash /></button>
+                                    <button onClick={() => deleteItem(item._id)}><FaTrash /></button>
                                 </li>
                             )
                         ))
@@ -92,7 +92,7 @@ const Home2 = () => {
                                 <li key={item._id} className={item.check === "true" ? styles.checked : null}>
                                     {item.name}
                                     <button onClick={() => checkItem(item._id)}><FaCheck /></button>
-                                    <button onClick={() => deleteItem(item_id)}><FaTrash /></button>
+                                    <button onClick={() => deleteItem(item._id)}><FaTrash /></button>
                                 </li>
                             )
                         ))
@@ -106,7 +106,7 @@ const Home2 = () => {
                                 <li key={item._id} className={item.check === "true" ? styles.checked : null}>
                                     {item.name}
                                     <button onClick={() => checkItem(item._id)}><FaCheck /></button>
-                                    <button onClick={() => deleteItem(item_id)}><FaTrash /></button>
+                                    <button onClick={() => deleteItem(item._id)}><FaTrash /></button>
                                 </li>
                             )
                         ))
