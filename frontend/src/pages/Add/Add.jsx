@@ -11,11 +11,9 @@ import { useNavigate } from "react-router-dom"
 function Add() {
     const navigate = useNavigate()
 
-    // Info storing for item creation
     const [name, setName] = useState("")
     const [place, setPlace] = useState("")
 
-    // This function creates an item via the API
     const handleItem = async(e) => {
         e.preventDefault()
 
