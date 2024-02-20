@@ -18,6 +18,7 @@ const Home2 = () => {
         try {
             const res = await dbFetch.get("/items")
             setItems(res.data)
+            setLoading(false)
         } catch (error) {
             console.log(error)
         }
@@ -49,7 +50,6 @@ const Home2 = () => {
 
     useEffect(() => {
         getItems()
-        setLoading(false)
     }, [loading])
 
     return (
