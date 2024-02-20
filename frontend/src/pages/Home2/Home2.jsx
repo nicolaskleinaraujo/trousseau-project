@@ -57,6 +57,7 @@ const Home2 = () => {
             <h1>Enxoval</h1>
             <div className={styles.grid_areas}>
                 <div>
+                    <h2>Cozinha</h2>
                     {items &&
                         items.map((item) => (
                             item.place === "Cozinha" && (
@@ -70,13 +71,46 @@ const Home2 = () => {
                     }
                 </div>
                 <div>
-
+                    <h2>Sala de Estar</h2>
+                    {items &&
+                        items.map((item) => (
+                            item.place === "Sala de Estar" && (
+                                <li key={item._id} className={item.check === "true" ? styles.checked : null}>
+                                    {item.name}
+                                    <button onClick={() => checkItem(item._id)}><FaCheck /></button>
+                                    <button onClick={() => deleteItem(item_id)}><FaTrash /></button>
+                                </li>
+                            )
+                        ))
+                    }
                 </div>
                 <div>
-
+                    <h2>Quarto</h2>
+                    {items &&
+                        items.map((item) => (
+                            item.place === "Quarto" && (
+                                <li key={item._id} className={item.check === "true" ? styles.checked : null}>
+                                    {item.name}
+                                    <button onClick={() => checkItem(item._id)}><FaCheck /></button>
+                                    <button onClick={() => deleteItem(item_id)}><FaTrash /></button>
+                                </li>
+                            )
+                        ))
+                    }
                 </div>
                 <div>
-
+                    <h2>Eletronicos</h2>
+                    {items &&
+                        items.map((item) => (
+                            item.place === "Eletronicos" && (
+                                <li key={item._id} className={item.check === "true" ? styles.checked : null}>
+                                    {item.name}
+                                    <button onClick={() => checkItem(item._id)}><FaCheck /></button>
+                                    <button onClick={() => deleteItem(item_id)}><FaTrash /></button>
+                                </li>
+                            )
+                        ))
+                    }
                 </div>
             </div>
         </div>
