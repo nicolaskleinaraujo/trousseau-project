@@ -1,5 +1,5 @@
 // CSS
-import styles from "./Home2.module.css"
+import styles from "./Home.module.css"
 
 // Icons
 import { FaTrash, FaCheck } from "react-icons/fa"
