@@ -27,18 +27,18 @@ const Home2 = () => {
         items.filter(async(item) => {
             if (item._id === id && item.check === "true") {
                 item.check = "false"
-
                 await dbFetch.put(`/items/${id}`, {
                     check: "false"
                 })
+                setLoading(true)
             } else if (item._id === id && item.check === "false") {
                 item.check = "true"
-
                 await dbFetch.put(`/items/${id}`, {
                     check: "true"
                 })
+                setLoading(true)
             }
-            setLoading(true)
+
         })
     }
 
@@ -55,64 +55,68 @@ const Home2 = () => {
     return (
         <div className={styles.home}>
             <h1>Enxoval</h1>
-            <div className={styles.grid_areas}>
-                <div>
-                    <h2>Cozinha</h2>
-                    {items &&
-                        items.map((item) => (
-                            item.place === "Cozinha" && (
-                                <li key={item._id} className={item.check === "true" ? styles.checked : null}>
-                                    {item.name}
-                                    <button onClick={() => checkItem(item._id)}><FaCheck /></button>
-                                    <button onClick={() => deleteItem(item._id)}><FaTrash /></button>
-                                </li>
-                            )
-                        ))
-                    }
+            {loading ? (
+                <img src="./loading-gif.svg" alt="GIF de Loading" className={styles.loading} />
+            ) : (
+                <div className={styles.grid_areas}>
+                    <div>
+                        <h2>Cozinha</h2>
+                        {items &&
+                            items.map((item) => (
+                                item.place === "Cozinha" && (
+                                    <li key={item._id} className={item.check === "true" ? styles.checked : null}>
+                                        {item.name}
+                                        <button onClick={() => checkItem(item._id)}><FaCheck /></button>
+                                        <button onClick={() => deleteItem(item._id)}><FaTrash /></button>
+                                    </li>
+                                )
+                            ))
+                        }
+                    </div>
+                    <div>
+                        <h2>Sala de Estar</h2>
+                        {items &&
+                            items.map((item) => (
+                                item.place === "Sala de Estar" && (
+                                    <li key={item._id} className={item.check === "true" ? styles.checked : null}>
+                                        {item.name}
+                                        <button onClick={() => checkItem(item._id)}><FaCheck /></button>
+                                        <button onClick={() => deleteItem(item._id)}><FaTrash /></button>
+                                    </li>
+                                )
+                            ))
+                        }
+                    </div>
+                    <div>
+                        <h2>Quarto</h2>
+                        {items &&
+                            items.map((item) => (
+                                item.place === "Quarto" && (
+                                    <li key={item._id} className={item.check === "true" ? styles.checked : null}>
+                                        {item.name}
+                                        <button onClick={() => checkItem(item._id)}><FaCheck /></button>
+                                        <button onClick={() => deleteItem(item._id)}><FaTrash /></button>
+                                    </li>
+                                )
+                            ))
+                        }
+                    </div>
+                    <div>
+                        <h2>Eletrônicos</h2>
+                        {items &&
+                            items.map((item) => (
+                                item.place === "Eletronicos" && (
+                                    <li key={item._id} className={item.check === "true" ? styles.checked : null}>
+                                        {item.name}
+                                        <button onClick={() => checkItem(item._id)}><FaCheck /></button>
+                                        <button onClick={() => deleteItem(item._id)}><FaTrash /></button>
+                                    </li>
+                                )
+                            ))
+                        }
+                    </div>
                 </div>
-                <div>
-                    <h2>Sala de Estar</h2>
-                    {items &&
-                        items.map((item) => (
-                            item.place === "Sala de Estar" && (
-                                <li key={item._id} className={item.check === "true" ? styles.checked : null}>
-                                    {item.name}
-                                    <button onClick={() => checkItem(item._id)}><FaCheck /></button>
-                                    <button onClick={() => deleteItem(item._id)}><FaTrash /></button>
-                                </li>
-                            )
-                        ))
-                    }
-                </div>
-                <div>
-                    <h2>Quarto</h2>
-                    {items &&
-                        items.map((item) => (
-                            item.place === "Quarto" && (
-                                <li key={item._id} className={item.check === "true" ? styles.checked : null}>
-                                    {item.name}
-                                    <button onClick={() => checkItem(item._id)}><FaCheck /></button>
-                                    <button onClick={() => deleteItem(item._id)}><FaTrash /></button>
-                                </li>
-                            )
-                        ))
-                    }
-                </div>
-                <div>
-                    <h2>Eletrônicos</h2>
-                    {items &&
-                        items.map((item) => (
-                            item.place === "Eletronicos" && (
-                                <li key={item._id} className={item.check === "true" ? styles.checked : null}>
-                                    {item.name}
-                                    <button onClick={() => checkItem(item._id)}><FaCheck /></button>
-                                    <button onClick={() => deleteItem(item._id)}><FaTrash /></button>
-                                </li>
-                            )
-                        ))
-                    }
-                </div>
-            </div>
+            )}
         </div>
     )
 }

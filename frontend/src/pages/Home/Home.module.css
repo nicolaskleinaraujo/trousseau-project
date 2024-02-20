@@ -16,6 +16,13 @@
     color: #7E82B2;
 }
 
+.loading {
+    display: flex;
+    margin: auto;
+    width: 8em;
+    padding: 3em 0 5em 0;
+}
+
 .grid_areas {
     display: grid;
     grid-template-columns: 1fr 1fr;
