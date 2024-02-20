@@ -99,7 +99,7 @@ const Home2 = () => {
                     }
                 </div>
                 <div>
-                    <h2>Eletronicos</h2>
+                    <h2>Eletrônicos</h2>
                     {items &&
                         items.map((item) => (
                             item.place === "Eletronicos" && (
