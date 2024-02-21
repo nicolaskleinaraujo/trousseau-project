@@ -11,13 +11,13 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px;
-    background-color: #1F1F1D;
+    padding: 10px;
+    background-color: #CCAF8F;
 }
 
 .header img {
     margin-left: 50px;
-    width: 150px;
+    width: 100px;
 }
 
 .header nav {
@@ -34,12 +34,13 @@
     padding: 10px;
     border-radius: 20px;
     transition: .3s;
+    color: #75734D;
 }
 
 .header nav a:hover {
-    background-color: #1E2130;
+    background-color: #E3D6C6;
 }
 
 .active {
-    background-color: #1E2130;
+    background-color: #E3D6C6;
 }

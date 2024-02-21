@@ -8,20 +8,21 @@
 }
 
 .add {
-    background-color: #1E2130;
+    background-color: #E3D6C6;
     color: white;
 }
 
 .add > h1 {
     text-align: center;
-    color: #7E82B2;
     padding: 20px;
+    color: black;
 }
 
 .add > form {
     max-width: 500px;
     width: 100%;
     margin: 0 auto;
+    color: black;
 }
 
 .add > form > div {

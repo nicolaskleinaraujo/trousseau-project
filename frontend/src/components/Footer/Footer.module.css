@@ -9,7 +9,7 @@
 
 .footer {
     padding: 13px;
-    background-color: #1F1F1D;
+    background-color: #CCAF8F;
     color: white;
 }
 
@@ -20,7 +20,7 @@
 
 .footer > p > a {
     text-decoration: none;
-    color: #BACCD8;
+    color: #75734D;
 }
 
 .footer > p > a:hover {
