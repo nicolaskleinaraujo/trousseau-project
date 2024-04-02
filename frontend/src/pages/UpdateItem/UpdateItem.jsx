@@ -41,7 +41,7 @@ const UpdateItem = () => {
     }, [])
 
     return (
-        <div>
+        <div className={styles.update_item}>
             <h1>Atualizar Item</h1>
 
             <form onSubmit={handleItem}>
