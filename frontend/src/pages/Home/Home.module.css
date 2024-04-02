@@ -10,7 +10,7 @@
     color: white;
 }
 
-.home > h1 {
+.home>h1 {
     text-align: center;
     padding: 20px;
     color: black;
@@ -29,7 +29,7 @@
     grid-template-rows: 1fr 1fr;
 }
 
-.grid_areas > div {
+.grid_areas>div {
     text-align: center;
     padding: 20px;
     font-size: 1.5em;
@@ -55,6 +55,8 @@
 }
 
 .grid_areas li button {
+    vertical-align: middle;
+    color: black;
     margin-left: 10px;
     border: none;
     padding: 3px;
@@ -64,6 +66,11 @@
     border: 3px solid #CCAF8F;
 }
 
-.grid_areas li button:hover {
+.grid_areas li a {
+    color: black;
+}
+
+.grid_areas li button:hover,
+.grid_areas li a:hover {
     background-color: #E3D6C6;
 }
