@@ -83,6 +83,7 @@ const Home2 = () => {
                                         {item.name}
                                         <button onClick={() => checkItem(item._id)}><FaCheck /></button>
                                         <button onClick={() => deleteItem(item._id)}><FaTrash /></button>
+                                        <button><Link to={`/update/${item._id}`}><FaPencilAlt /></Link></button>
                                     </li>
                                 )
                             ))
@@ -97,6 +98,7 @@ const Home2 = () => {
                                         {item.name}
                                         <button onClick={() => checkItem(item._id)}><FaCheck /></button>
                                         <button onClick={() => deleteItem(item._id)}><FaTrash /></button>
+                                        <button><Link to={`/update/${item._id}`}><FaPencilAlt /></Link></button>
                                     </li>
                                 )
                             ))
@@ -111,6 +113,7 @@ const Home2 = () => {
                                         {item.name}
                                         <button onClick={() => checkItem(item._id)}><FaCheck /></button>
                                         <button onClick={() => deleteItem(item._id)}><FaTrash /></button>
+                                        <button><Link to={`/update/${item._id}`}><FaPencilAlt /></Link></button>
                                     </li>
                                 )
                             ))
