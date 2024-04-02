@@ -47,15 +47,19 @@ const UpdateItem = () => {
                     />
                 </label>
 
-                
+                <label>
+                    <p>Local:</p>
 
-                <select required name="place" id="place" defaultValue={place} onChange={ (e) => setPlace(e.target.value) }>
-                    <option value={place} selected hidden>{place}</option>
-                    <option value="Cozinha">Cozinha</option>
-                    <option value="Sala de Estar">Sala de Estar</option>
-                    <option value="Quarto">Quarto</option>
-                    <option value="Eletronicos">Eletronicos</option>
-                </select>
+                    <select required name="place" id="place" defaultValue={place} onChange={ (e) => setPlace(e.target.value) }>
+                        <option value={place} selected hidden>{place}</option>
+                        <option value="Cozinha">Cozinha</option>
+                        <option value="Sala de Estar">Sala de Estar</option>
+                        <option value="Quarto">Quarto</option>
+                        <option value="Eletronicos">Eletronicos</option>
+                    </select>
+                </label>
+
+                <input type="submit" value="Atualizar" /> 
             </form>
         </div>
     )
