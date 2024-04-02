@@ -11,7 +11,10 @@ router.route("/items").post((req, res) => itemController.create(req, res))
 router.route("/items").get((req, res) => itemController.getAll(req, res))
 
 // Remove item by id function
-router.route("/items/:id").delete((req, res) => itemController.delete(req, res)) 
+router.route("/items/:id").delete((req, res) => itemController.delete(req, res))
+
+// Get Item By Id Function
+router.route("/items/:id").get((req, res) => itemController.getById(req, res))
 
 // Check item by id function
 router.route("/items/:id").put((req, res) => itemController.update(req, res))
