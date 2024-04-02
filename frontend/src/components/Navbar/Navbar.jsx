@@ -7,7 +7,7 @@ import { NavLink } from 'react-router-dom'
 function Navbar() {
     return (
         <header className={styles.header}>
-            <NavLink to="/"><img src="./project-logo.svg" alt="Logo Projeto" /></NavLink>
+            <NavLink to="/"><img src="/project-logo.svg" alt="Logo Projeto" /></NavLink>
             <nav>
                 <NavLink to="/" className={({ isActive }) => (isActive ? (styles.active) : "")}>
                     Home
