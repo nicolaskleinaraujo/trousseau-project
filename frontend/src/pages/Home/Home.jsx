@@ -2,13 +2,14 @@
 import styles from "./Home.module.css"
 
 // Icons
-import { FaTrash, FaCheck } from "react-icons/fa"
+import { FaTrash, FaCheck, FaPencilAlt } from "react-icons/fa"
 
 // DB Fetch
 import dbFetch from "../../axios/config"
 
 // Modules
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 
 const Home2 = () => {
     const [loading, setLoading] = useState(true)
@@ -67,6 +68,7 @@ const Home2 = () => {
                                         {item.name}
                                         <button onClick={() => checkItem(item._id)}><FaCheck /></button>
                                         <button onClick={() => deleteItem(item._id)}><FaTrash /></button>
+                                        <button><Link to={`/update/${item._id}`}><FaPencilAlt /></Link></button>
                                     </li>
                                 )
                             ))
