@@ -6,10 +6,11 @@ import dbFetch from "../../axios/config"
 
 // Modules
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 
 const UpdateItem = () => {
     const { id } = useParams()
+    const navigate = useNavigate()
 
     const [name, setName] = useState("")
     const [place, setPlace] = useState("")
@@ -20,8 +21,19 @@ const UpdateItem = () => {
         setPlace(res.data.place)
     }
 
-    const handleItem = () => {
-        console.log(name, place)
+    const handleItem = async(e) => {
+        e.preventDefault()
+
+        try {
+            await dbFetch.put(`/items/${id}`, {
+                name,
+                place
+            })
+
+            navigate("/")
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     useEffect(() => {
